@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+ 
+{% block title %}Game Site{% endblock %}
+
+{% block header %}
+<header>
+    <div class="header_wrapper">
+        <h1>
+            <a href="#">GAME Site.</a>
+            <span>たくさん遊べる<br>ゲームサイト</span>
+        </h1>
+    </div>
+</header>
+
+
+
+<!-- ナビゲーション -->
+<nav class="gnav">
+    <ul class="gnav_wrapper">
+        <li><a href="#">About</a></li>
+        <li><a href="{{ url_for('auth.login')}}">Login</a></li>
+        <li><a href="#">Top</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<table>
+<tr>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('puzzle')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/15puzzle/15.png') }}" alt=""><span class="cap">15パズル</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Shooting')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/shooting/ship.png') }}" alt=""><span class="cap">シューティング</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Cards')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Flipcards/icon.png') }}" alt=""><span class="cap">神経衰弱</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Reversi')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Reversi/icon.png') }}" alt=""><span class="cap">オセロ</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Dungeon')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Dungeon/arrows.png') }}" alt=""><span class="cap">迷路</span></span></a></div>
+    </td>
+</tr>
+<tr>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('FunkyBlocks')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Blocks/time0.png') }}" alt=""><span class="cap">ブロック</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('saturnvoyager')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/SaturnVoyager/scope.png') }}" alt=""><span class="cap">サターンボイジャー</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Jumper')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/jumper/stick0.png') }}" alt=""><span class="cap">ジャンパー</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('CarryIt')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/CarryIt/imgWorker.png') }}" alt=""><span class="cap">荷物運び</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('chase')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Chase/chase.png') }}" alt=""><span class="cap">チェイス</span></span></a></div>
+    </td>
+</tr>
+<tr>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('Billiard')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/Billiard/icon.png') }}" alt=""><span class="cap">ビリヤード</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('EggCatch')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/EggCatch/chick.png') }}" alt=""><span class="cap">卵集め</span></span></a></div>
+    </td>
+    <td>
+    <div class="zoomInText"><a href="{{ url_for('yasai')}}"><span class="mask"><img src="{{ url_for('static', filename='../static/images/yasai/yasai0.png') }}" alt=""><span class="cap">ツムツム風</span></span></a></div>
+    </td>
+</tr>
+</table>
+
+
+<div class="cherry-blossom"></div>
+
+{% endblock %}
+
+{% block footer %}
+<script type="text/javascript" src="{{ url_for('static', filename='../static/scripts/main.js')}}"></script>
+{% endblock %}

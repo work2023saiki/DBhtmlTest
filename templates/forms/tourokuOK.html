@@ -1,0 +1,17 @@
+{% extends "forms/baseForm.html" %}  
+
+{% block title %} 登録完了 {% endblock %}
+
+{% block content %}
+
+<header>
+    <h1>登録完了</h1>
+</header>    
+    
+    <ul>
+        <li>名前: {{session['name']}}</li> 
+        <li>パスワード: {{session['password']}}</li>
+    </ul>
+    <p><a href="{{ url_for('auth.login') }}">ログインへ</a></p>
+
+{% endblock %}

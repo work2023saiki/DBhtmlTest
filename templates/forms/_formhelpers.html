@@ -1,0 +1,12 @@
+{% macro render_field(field) %}       <!--関数を定義-->
+    <dt>{{ field.label }}        <!--（「名前：」などのラベル）-->
+    <dd>{{ field(**kwargs)|safe }}   <!--入力欄-->
+    {% if field.errors %}      <!--もしバリデーションエラーが出たら-->
+        <ul style="color: red;">
+        {% for error in field.errors %}    <!--エラーの文章を赤く表示する-->
+            <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </dd>
+{% endmacro %}

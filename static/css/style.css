@@ -1,0 +1,221 @@
+
+body{
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/* ヘッダー */
+header{
+  width: 100%;
+  padding: 10px 0;
+}
+.header_wrapper{
+  max-width: 1320px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header_wrapper h1{
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+.header_wrapper h1 a{
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 34px;
+}
+.header_wrapper h1 span{
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-left: 10px;
+}
+/* ナビゲーション gnav */
+.gnav{
+  width: 100%;
+  background-color: #333;
+}
+.gnav_wrapper{
+  max-width: 980px;
+  margin: auto;
+  display: flex;
+}
+.gnav_wrapper li{
+  border-left: #888 1px solid;
+  text-align: center;
+  width: calc(100%/3);  /* 画面幅３等分 */
+  transition: all  0.3s ease; /* 変化をなめらかに */
+}
+.gnav_wrapper li:last-child{
+  border-right: #888 1px solid;
+}
+.gnav_wrapper li:hover{
+  background-color: #888;
+}
+.gnav_wrapper li a{
+  display: block;
+  padding: 1.3em 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*　画像の拡大＋テキスト出現 zoomInText　*/
+
+.zoomInText{ /* テキストの基点となる位置を定義 */
+  position: relative;
+}
+.zoomInText span.mask{
+  position: relative;
+  transition: .3s ease-in-out; /* 移り変わる速さ */
+  display: block; /* 画像spanタグをブロック要素に */
+  line-height: 0; /* 行の高さを0にする */
+  overflow:hidden; /* 拡大してはみ出る要素を隠す */
+}
+
+.zoomInText:hover span.mask::before{ /* hoverした時の変化 */
+  content:"";
+  position: absolute;
+  z-index:2;
+  width: calc(100% - 5px);
+  height: calc(100% - 5px);
+  background:rgba(0,0,0,0.5); /* 背景色 */
+}
+
+.zoomInText img{
+  transform: scale(1);
+  filter: blur(0);
+  transition: .3s ease-in-out; /* 移り変わる速さ */
+}
+
+.zoomInText:hover img{ /* hoverした時の変化 */
+  transform: scale(1.2); /* 拡大の値 */
+  filter: blur(2px); /* ぼかし具合 */
+}
+
+.zoomInText span.cap{
+  opacity:0;
+  transition: .5s ease-in-out; /* 移り変わる速さ */
+  position: absolute;
+  z-index:3; /* テキストを前面に出す*/
+  top: 100px;
+  left: 100px;
+  transform: translate(-50%,-50%);
+  color: #fff; /*テキストの色*/
+  line-height: 1.5; /*行の高さ*/
+}
+
+.zoomInText:hover span.cap{ /*hoverした時の変化*/
+  opacity:1;
+}
+
+
+/*========= レイアウトCSS ===============*/
+
+a{
+  color: #333;
+  text-decoration: none;
+}
+
+.lead{
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/*画像のレスポンシブ*/
+
+img{
+  width:200px;/* 画像差し替え後100%へ */
+  height:200px;/* 画像差し替え後autoへ */
+}
+
+
+/*　横幅　*/
+
+.zoomInText{
+  width: 200px;
+  margin: 0 auto;/*中央揃え*/
+}
+
+
+h1 {
+  padding: 1rem 3rem;
+  -webkit-transform: skew(-15deg);
+  transform: skew(-15deg);
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#209cff), to(#68e0cf));
+  background-image: -webkit-linear-gradient(left, #209cff 0%, #68e0cf 100%);
+  background-image: linear-gradient(to right, #209cff 0%, #68e0cf 100%);
+}
+
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      list-style: none;
+    }
+    li {
+      width: 45%;
+    }
+
+    
+ /* 桜を表示するコンテナのスタイル */
+ .cherry-blossom-container {
+    position: relative;
+    height: 100vh; /* コンテナの高さ */
+    width: 80%; /* コンテナの横幅  100%にするとホビーが反応しなくなる */
+    overflow: hidden; /* コンテナからはみ出した要素を隠す */
+  }
+  
+  /* 桜の花びらのスタイル */
+  .petal {
+    position: absolute;
+    background-color: #ffc0cb; /* 花びらの色 */
+    border-radius: 150% 0 150% 0;
+    animation: animate-petal 10s linear;
+  }
+  
+  .petal::after {
+    content: "";
+    position: absolute;
+    top: -14%;
+    left: -10%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc0cb;
+    border-radius: 150% 0 150% 0;
+    transform: rotate(15deg);
+  }
+  
+  /* 花びらが降るアニメーション */
+  @keyframes animate-petal {
+    0% {
+      top: 0;
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: 100vh;
+      transform: rotate(3000deg);
+    }
+  }

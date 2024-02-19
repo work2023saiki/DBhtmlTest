@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title> {% block title %} フォーム {% endblock %} </title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='formstyle.css') }}">
+        
+
+    </head>
+
+    <body>
+
+        {% if current_user.is_authenticated %}         <!--ログインしていたら-->
+            <a href="{{ url_for('auth.logout') }}">ログアウト</a>
+        {% endif %}
+
+
+        {% block content %} 内容 {% endblock %}
+    </body>
+    
+</html>
