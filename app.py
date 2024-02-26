@@ -99,6 +99,10 @@ def Billiard():
 def yasai():
     return render_template('game/yasai.html')
 
+@app.route('/usertable')
+def usertable():
+    return render_template('usertable.html')
+
 if __name__ == '__main__':
     app.run()
     #   app.run(debug=False, host='192.168.1.108', port=50004)
